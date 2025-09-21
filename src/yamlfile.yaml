@@ -17,19 +17,19 @@ s_message: 'Hello\nWorld' # Hello\nWorld
 s_path: 'C:\Users\Admin' # C:\Users\Admin
 s_quote: 'It''s YAML' # It's YAML
 
- long_message: |
-   Hello 
-   Mina
-   How Are You ?
-   
+long_message: |
+  Hello 
+  Mina
+  How Are You ?
+
 # Hello 
 # Mina
 # How Are You ?
 
 folded_message: |
-   Hello 
-   Mina
-   How Are You ?
+  Hello 
+  Mina
+  How Are You ?
 
 # Hello Mina How Are You ?
 
@@ -51,7 +51,7 @@ employee:
     age: 26
     contact:
       email: john_clark@example.com
-  name: Mori Su
+  - name: Mori Su
     age: 22
     contact:
       email: mori_su@example.com
@@ -69,7 +69,7 @@ servers:
       ip: 192.168.1.12
     - host: stage2.example.com 
       ip: 192.168.1.13       
-   development:
+  development:
     - host: dev1.example.com 
       ip: 192.168.1.14
     - host: dev2.example.com 
