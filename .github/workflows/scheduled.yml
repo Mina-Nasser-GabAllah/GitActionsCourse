@@ -1,9 +1,11 @@
 on:
-    schedule:
-        - cron: '* * * * 0'  # Every min at sunday
+  push:
+  schedule:
+    - cron: '* * * * 0'  # Every min at sunday
+      
 jobs:
-    daily-task:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Print message
-              run: echo "This is a scheduled task running every min at sunday"
+  daily-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "This is a scheduled task running every min at sunday"
