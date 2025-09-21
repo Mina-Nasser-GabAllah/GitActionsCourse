@@ -1,6 +1,6 @@
 on:
     schedule:
-      - cron: '45 0 * * 0'  # Every 12:45 am at sunday
+      - cron: '* 0 * * 0'  # Every 12:45 am at sunday
       
 jobs:
   daily-task:
