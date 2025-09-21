@@ -1,6 +1,7 @@
 on:
-    schedule:
-      - cron: '* 0 * * 0'  # Every 12:45 am at sunday
+  push:
+  schedule:
+    - cron: '* 0 * * 0'  # Every min at sunday
       
 jobs:
   daily-task:
