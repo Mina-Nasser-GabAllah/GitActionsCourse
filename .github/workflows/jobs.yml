@@ -26,23 +26,21 @@ jobs:
   job_4:
     runs-on: ubuntu-latest
     needs: [job_2, job_3]
-    steps: 
-      - name: Job 4 
+    container:
+      image: alpine:latest
+    steps:
+      - name: Job 4
         run: echo job ${{ github.job }}
-
       - name: Run Inside Alpine Container
-        uses: docker://alpine:latest
-        with:
-          entrypoint: /bin/bash
-          args: -c "echo 'This is running inside an Alpine container!'"
-         
+        run: echo 'This is running inside an Alpine container!'
       - name: Run Another command
         run: echo "Another command executed after the container step"
 
 
 
-  docker_job:
+  job_5:
     runs-on: ubuntu-latest
+    needs: job_4
     container:
       image: node:latest
     steps:
