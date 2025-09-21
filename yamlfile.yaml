@@ -1,0 +1,76 @@
+name: Mina
+age: 30
+salary: 5320.50
+user_name: MNasser
+is_active: true
+employment_date: 2022-01-01T9:00:00Z
+direct_manger: MR. Manger
+serial_number: "00700"
+regex: "^[A-Za-z]+:\\s"
+message: "Hello\nMina" # Hello  
+                       # Mina 
+
+path: "C:\\Users\\Admin" # C:\Users\Admin
+quote: "It's YAML" 
+
+s_message: 'Hello\nWorld' # Hello\nWorld
+s_path: 'C:\Users\Admin' # C:\Users\Admin
+s_quote: 'It''s YAML' # It's YAML
+
+ long_message: |
+   Hello 
+   Mina
+   How Are You ?
+   
+# Hello 
+# Mina
+# How Are You ?
+
+folded_message: |
+   Hello 
+   Mina
+   How Are You ?
+
+# Hello Mina How Are You ?
+
+# Map collection
+employee:                  
+  name: Mark Morad
+  age: 24
+  contact:
+    email: mark_morad@example.com
+    
+# List of Map collection
+    
+employee:                  
+  - name: Mark Morad
+    age: 24
+    contact:
+      email: mark_morad@example.com
+  - name: John Clark
+    age: 26
+    contact:
+      email: john_clark@example.com
+  name: Mori Su
+    age: 22
+    contact:
+      email: mori_su@example.com
+
+# Map of List collection
+
+servers:
+  production:
+    - host: prod1.example.com 
+      ip: 192.168.1.10
+    - host: prod2.example.com 
+      ip: 192.168.1.11      
+  staging:
+    - host: stage1.example.com 
+      ip: 192.168.1.12
+    - host: stage2.example.com 
+      ip: 192.168.1.13       
+   development:
+    - host: dev1.example.com 
+      ip: 192.168.1.14
+    - host: dev2.example.com 
+      ip: 192.168.1.15       
