@@ -1,3 +1,4 @@
+
 # Basic Data Types in YAML
 # String, Integer, Float, Boolean, Date, Null
 
@@ -95,8 +96,16 @@ servers:
 # To show a list of runs for the workflow file 'manual.yml':
 #   gh run list --workflow="manual.yml"
 
-# To trigger a workflow using repository_dispatch (manual event trigger):
-#   gh api repos/:owner/:repo/dispatches -f event_type=<event_name>
-# Replace :owner and :repo with your repository details, and <event_name> with your custom event type.
-# Example:
-#   gh api repos/Mina-Nasser-GabAllah/GitActionsCourse/dispatches -f event_type=manual-trigger
+
+# To trigger a workflow using the GitHub REST API (repository_dispatch):
+# Send a POST request to:
+#   https://api.github.com/repos/:owner/:repo/dispatches
+# With JSON body:
+#   { "event_type": "<event_name>" }
+# And set the Authorization header with a GitHub token.
+# Example using curl:
+#   curl -X POST \
+#     -H "Accept: application/vnd.github+json" \
+#     -H "Authorization: Bearer $GITHUB_PAT" \
+#     https://api.github.com/repos/Mina-Nasser-GabAllah/GitActionsCourse/dispatches \
+#     -d '{"event_type": "incident_report"}'
