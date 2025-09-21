@@ -6,16 +6,25 @@ jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        deprecated=true
-        if [[ depreacted ]]; then
-          echo ::warning:: Deprecated fuction found
-        fi 
+      - name: annotaions example
+        run: |
+          deprecated=true
+          if [[ depreacted ]]; then
+            echo ::warning:: Deprecated fuction found
+          fi 
 
-        if [[ depreacted ]]; then
-          echo ::error:: Error found
-        fi
-          
-        if [[ depreacted ]]; then
-          echo ::notice:: Notice found
-        fi
+          if [[ depreacted ]]; then
+            echo ::error:: Error found
+          fi
+            
+          if [[ depreacted ]]; then
+            echo ::notice:: Notice found
+          fi
+      
+      - name: Set API_KEY
+        run: |
+          echo "API_KEY=1234" >> $GITHUB_ENV
+      
+      - name: Use API_KEY
+        run: |
+          echo "::add-mask::$API_KEY"
