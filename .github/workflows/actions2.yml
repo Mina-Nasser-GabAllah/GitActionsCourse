@@ -1,17 +1,39 @@
-name: Node.js Matrix Test
+name: Expressions
 on:
   workflow_dispatch:
 
 jobs:
-  job_1:
-    strategy:
-        fail-fast: false
-        max-parallel: 3
-        matrix:
-            os: [ubuntu-latest, windows-latest, macos-latest]
-            node-version: [14.x,15.x,18.x]
-    runs-on: ${{ matrix.os }}
+  expressions:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: Run on push
+        if: ${{github.event_name == 'push'}}
+        run: echo "This runs only on push"
+      - name: Run if Ref is main
+        if: ${{github.ref == 'refs/heads/main'}}
+        run: echo "This runs only on the main branch"
+
+      - name: Run if file changed
+        if: ${{contains(github.event.head_commit.message, 'WIP')}}
+        run: echo "README was updated"
+
+      - name: start With message
+        if: ${{startsWith(github.ref, 'refs/tags/v')}}
+        run: echo "Commit message starts with 'start'"
+
+
+      - name: Run if previous step failed
+        if: ${{failure()}}
+        run: echo "Previous step failed"
+
+      - name: Run if previous step succeeded
+        if: ${{success()}} 
+        #always()
+        #cancelled()
+
+        run: echo "Previous step succeeded"
+
+
+      - name: Run a deployment script
+        run: ./deploy.sh
+
