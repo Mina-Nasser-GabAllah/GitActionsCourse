@@ -1,11 +1,11 @@
 on:
   push:
   schedule:
-    - cron: '* 0 * * 0'  # Every min at sunday
+    - cron: '* * * * 0'  # Every min at sunday
       
 jobs:
   daily-task:
     runs-on: ubuntu-latest
     steps:
       - name: Print message
-        run: echo "This is a scheduled task running every Monday at 8:00 AM"
+        run: echo "This is a scheduled task running every min at sunday"
