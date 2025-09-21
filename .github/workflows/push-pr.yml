@@ -10,15 +10,14 @@ on:
     branches:
       - main
       - "release/**"
-    paths:
-      - "src/**"
+  
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v5
 
       - name: Run tests
