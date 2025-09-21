@@ -28,3 +28,4 @@ jobs:
       - name: Use API_KEY
         run: |
           echo "::add-mask::$API_KEY"
+          echo "Using API_KEY: $API_KEY"
