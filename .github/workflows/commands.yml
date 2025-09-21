@@ -21,11 +21,11 @@ jobs:
             echo ::notice:: Notice found
           fi
       
-      - name: Set API_KEY
+      - name: Set and Mask API_KEY
         run: |
           echo "API_KEY=1234" >> $GITHUB_ENV
+          echo "::add-mask::1234"
       
       - name: Use API_KEY
         run: |
-          echo "::add-mask::$API_KEY"
           echo "Using API_KEY: $API_KEY"
