@@ -1,0 +1,12 @@
+name: Manual Repository Dispatch Workflow
+on:
+  repository_dispatch:
+    types: [incident_report]
+
+jobs:
+  handle-incident:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Incident Report
+        run: echo "Incident report received and being handled."

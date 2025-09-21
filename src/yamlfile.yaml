@@ -1,3 +1,6 @@
+# Basic Data Types in YAML
+# String, Integer, Float, Boolean, Date, Null
+
 name: Mina
 age: 30
 salary: 5320.50
@@ -74,3 +77,26 @@ servers:
       ip: 192.168.1.14
     - host: dev2.example.com 
       ip: 192.168.1.15       
+
+
+
+#cron jobs at yml format
+#* * * * *  =>  min hour day month day_of_week
+# This line shows the structure of a cron schedule used in YAML workflows:
+# - min: Minute (0-59)
+# - hour: Hour (0-23)
+# - day: Day of the month (1-31)
+# - month: Month (1-12)
+# - day_of_week: Day of the week (0-6, where 0 is Sunday)
+
+# GitHub CLI workflow commands:
+# To manually trigger a workflow file named 'manual.yml' with an input parameter (e.g., environment=production):
+#   gh workflow run manual.yml -f environment=production
+# To show a list of runs for the workflow file 'manual.yml':
+#   gh run list --workflow="manual.yml"
+
+# To trigger a workflow using repository_dispatch (manual event trigger):
+#   gh api repos/:owner/:repo/dispatches -f event_type=<event_name>
+# Replace :owner and :repo with your repository details, and <event_name> with your custom event type.
+# Example:
+#   gh api repos/Mina-Nasser-GabAllah/GitActionsCourse/dispatches -f event_type=manual-trigger
