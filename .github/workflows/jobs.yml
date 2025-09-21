@@ -6,7 +6,12 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo job ${{ github.job }}"
+      - uses: actions/checkout@v2
+      - run: |
+          "echo job ${{ github.job }}"
+          npm install
+          npm run build 
+
   
   job_2:
     runs-on: ubuntu-latest
@@ -25,4 +30,3 @@ jobs:
     needs: [job_2, job_3]
     steps: 
       - run: "echo job ${{ github.job }}"
-      
