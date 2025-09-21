@@ -11,3 +11,17 @@ jobs:
         if [[ depreacted ]]; then
           echo ::warning:: Deprecated fuction found
         fi 
+
+        if [[ depreacted ]]; then
+          echo ::error:: Error found
+        fi
+          
+        if [[ depreacted ]]; then
+          echo ::action:: Notice found
+        fi
+        if [[ depreacted ]]; then
+          echo ::debug:: Debug found
+        fi
+        if [[ depreacted ]]; then
+          echo ::notice:: Notice found
+        fi
