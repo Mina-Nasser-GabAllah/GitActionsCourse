@@ -1,12 +1,11 @@
 name: Scheduled Workflow
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '*/1 * * * *'  # Every min at sunday
+    - cron: '*/5 * * * *'  # Every 5 min
       
 jobs:
   daily-task:
     runs-on: ubuntu-latest
     steps:
       - name: Print message
-        run: echo "This is a scheduled task running every min"
+        run: echo "This is a scheduled task running every 5 min"
