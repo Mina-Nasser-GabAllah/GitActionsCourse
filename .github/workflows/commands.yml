@@ -17,11 +17,5 @@ jobs:
         fi
           
         if [[ depreacted ]]; then
-          echo ::action:: Notice found
-        fi
-        if [[ depreacted ]]; then
-          echo ::debug:: Debug found
-        fi
-        if [[ depreacted ]]; then
           echo ::notice:: Notice found
         fi
