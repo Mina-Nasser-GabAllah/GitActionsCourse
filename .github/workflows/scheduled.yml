@@ -1,0 +1,10 @@
+on:
+    schedule:
+      - cron: '45 0 * * 0'  # Every 12:45 am at sunday
+      
+jobs:
+  daily-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "This is a scheduled task running every Monday at 8:00 AM"
